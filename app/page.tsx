@@ -78,7 +78,7 @@ export default function Home() {
       {/* Theater display */}
       <div className="flex justify-center gap-2 mt-10">
         {currentTheater.elements.map((element) => (
-          <Image key={element} src={`/imgs/element/${element.toLowerCase()}.png`} alt={element} width={40} height={40}  />
+          <Image key={element} src={`/imgs/element/${element}.png`} alt={element} width={40} height={40}  />
         ))}
       </div>
 

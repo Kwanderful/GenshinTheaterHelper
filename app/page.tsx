@@ -11,6 +11,7 @@ export default function Home() {
   const [selectedCharacters, setSelectedCharacters] = useState<SelectedCharacter[]>([]);
   const theaterMonths = theaters.map((theater) => theater.month);
   const [currentTheater, setCurrentTheater] = useState(theaters[0] || null);
+  const [includeTraveler, setIncludeTraveler] = useState(false);
 
   useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -73,10 +74,15 @@ export default function Home() {
       </div>
 
       {/* Display usable characters and characters needed for next difficulty */}
-      <ResultsDisplay numUsableCharacters={numUsableCharacters} highestTheater={highestTheater} />
+      <ResultsDisplay numUsableCharacters={numUsableCharacters + (includeTraveler ? 1 : 0)} highestTheater={highestTheater} />
+
+      <div className="flex justify-center gap-2 mt-5">
+        <p className="text-lg">Include traveler?</p>
+        <input type="checkbox" id="include-traveler" checked={includeTraveler} onChange={() => setIncludeTraveler(!includeTraveler)} />
+      </div>
 
       {/* Theater display */}
-      <div className="flex justify-center gap-2 mt-10">
+      <div className="flex justify-center gap-2 mt-8">
         {currentTheater.elements.map((element) => (
           <Image key={element} src={`/imgs/element/${element}.png`} alt={element} width={40} height={40}  />
         ))}

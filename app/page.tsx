@@ -11,7 +11,7 @@ export default function Home() {
   const [selectedCharacters, setSelectedCharacters] = useState<SelectedCharacter[]>([]);
   const theaterMonths = theaters.map((theater) => theater.month);
   const [currentTheater, setCurrentTheater] = useState(theaters[0] || null);
-  const [includeTraveler, setIncludeTraveler] = useState(false);
+  const [includeTraveler, setIncludeTraveler] = useState(true);
 
   useEffect(() => {
         // eslint-disable-next-line react-hooks/set-state-in-effect

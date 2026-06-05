@@ -18,9 +18,9 @@ export default function Home() {
         setSelectedCharacters(loadSelectedCharacters());
       }, []);
 
-  const { numUsableCharacters, highestTheater } = useMemo(() => {
+  const { numUsableCharacters } = useMemo(() => {
     if (!currentTheater) {
-      return { numUsableCharacters: 0, highestTheater: "Easy" };
+      return { numUsableCharacters: 0 };
     }
 
     const openingCastMatches = currentTheater.opening_cast.filter((character) =>
@@ -38,22 +38,9 @@ export default function Home() {
         !currentTheater.special_invites.includes(selected.name),
     ).length;
 
-    const count = openingCastMatches + specialInviteMatches + elementMatches;
-    let highestLevel = "Easy";
+    const count = openingCastMatches + specialInviteMatches + elementMatches + (selectedCharacters.length === 0 ? 6 : 0);
 
-    if (count >= 28) {
-      highestLevel = "Lunar";
-    } else if (count >= 22) {
-      highestLevel = "Visionary";
-    } else if (count >= 16) {
-      highestLevel = "Hard";
-    } else if (count >= 12) {
-      highestLevel = "Normal";
-    } else {
-      highestLevel = "Easy";
-    }
-
-    return { numUsableCharacters: count, highestTheater: highestLevel };
+    return { numUsableCharacters: count };
   }, [currentTheater, selectedCharacters]);
 
 
@@ -74,7 +61,7 @@ export default function Home() {
       </div>
 
       {/* Display usable characters and characters needed for next difficulty */}
-      <ResultsDisplay numUsableCharacters={numUsableCharacters + (includeTraveler ? 1 : 0)} highestTheater={highestTheater} />
+      <ResultsDisplay numUsableCharacters={numUsableCharacters + (includeTraveler ? 1 : 0)} />
 
       <div className="flex justify-center gap-2 mt-5">
         <p className="text-lg">Include traveler?</p>

@@ -481,6 +481,12 @@ const characters = [
         icon: "Noelle.png"
     },
     {
+        name: "Odette",
+        rarity: 5,
+        element: "Cryo",
+        icon: "Odette.png"
+    },
+    {
         name: "Ororon",
         rarity: 4,
         element: "Electro",
@@ -515,6 +521,12 @@ const characters = [
         rarity: 4,
         element: "Cryo",
         icon: "Rosaria.png"
+    },
+    {
+        name: "Sandrone",
+        rarity: 5,
+        element: "Cryo",
+        icon: "Sandrone.png"
     },
     {
         name: "Kujou Sara",

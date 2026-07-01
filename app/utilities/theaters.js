@@ -1,17 +1,5 @@
 const theaters = [
     {
-        month: "June",
-        elements: ["Pyro", "Cryo", "Geo"],
-        opening_cast: ["Klee", "Xiangling", "Kamisato Ayaka", "Chongyun", "Albedo", "Noelle"],
-        special_invites: ["Sangonomiya Kokomi", "Aino", "Prune", "Fischl"],
-        act_3_boss: "Perpetual Mechanical Array",
-        act_6_boss: "Maguu Kenki",
-        act_8_boss: "Millennial Pearl Seahorse",
-        act_10_boss: "Legatus Golem",
-        arcana_challenge_1: ["Consecrated Fanged Beast", "Consecrated Scorpion", "Consecrated Horned Crocodile", "Consecrated Red Vulture"],
-        arcana_challenge_2: ["Ruin Grader", "Ruin Guard", "Ruin Drake: Skywatch", "Ruin Drake: Earthguard"]
-    },
-    {
         month: "July",
         elements: ["Pyro", "Electro", "Cryo"],
         opening_cast: ["Arlecchino", "Bennett", "Cyno", "Beidou", "Ganyu", "Diona"],
@@ -35,5 +23,11 @@ const theaters = [
         arcana_challenge_1: [],
         arcana_challenge_2: []
     },
+    {
+        month: "September",
+        elements: ["Hydro", "Electro", "Dendro"],
+        opening_cast: ["Columbina", "Xingqiu", "Cyno", "Kuki Shinobu", "Lauma", "Kaveh"],
+        special_invites: ["Nicole", "Sandrone", "Sucrose", "Odette"],
+    }
 ]
 export default theaters;

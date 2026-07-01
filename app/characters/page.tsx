@@ -74,7 +74,7 @@ export default function Home() {
         <p>Jump to: </p>
         {groupedCharacters.map(({ element }) => (
           <button key={element} className="cursor-pointer" onClick={() => document.getElementById(`element-${element}`)?.scrollIntoView({ behavior: "smooth" })}>
-            <Image src={`/imgs/element/${element.toLowerCase()}.png`} alt={element} width={34} height={34} className="inline-block ml-1 -mb-1" />
+            <Image src={`/imgs/element/${element}.png`} alt={element} width={34} height={34} className="inline-block ml-1 -mb-1" />
           </button>
         ))}
       </section>
@@ -83,7 +83,7 @@ export default function Home() {
         {groupedCharacters.map(({ element, characters: group }) => (
           <div id={`element-${element}`}key={element}>
             <h2 className="mb-4 text-xl font-semibold" style={{ color: elementTitleColors[element] }}>
-              {element} <Image src={`/imgs/element/${element.toLowerCase()}.png`} alt={element} width={34} height={34} className="inline-block ml-1 -mb-1" />
+              {element} <Image src={`/imgs/element/${element}.png`} alt={element} width={34} height={34} className="inline-block ml-1 -mb-1" />
             </h2>
             <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-5">
               {group.map((character) => {

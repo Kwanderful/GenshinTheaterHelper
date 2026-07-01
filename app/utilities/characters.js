@@ -241,7 +241,7 @@ const characters = [
         icon: "Gorou.png"
     },
     {
-        name: "Heizou",
+        name: "Shikanoin Heizou",
         rarity: 4,
         element: "Anemo",
         icon: "Heizou.png"

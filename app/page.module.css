@@ -1,66 +1,24 @@
-@import "tailwindcss";
-
-:root {
-  --background: #231144;
-  --foreground: #eef2ff;
-  --surface: #11101f;
-  --surface-strong: #17152f;
-  --border: #3f3668;
-  --border-strong: #5b4fb7;
-  --accent: #8b5cf6;
-  --accent-strong: #7c3aed;
-  --muted: #bfc7ff;
-  --muted-surface: #1b1930;
-  --shadow: 0 20px 45px rgba(139, 92, 246, 0.12);
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-::selection {
-  background: rgba(109, 77, 182, 0.25);
-  color: inherit;
-}
-
-button,
-input,
-textarea,
-select {
-  color: inherit;
-}
-
-
 ::view-transition-old(.slide-in) {
   animation-name: slideOutRight;
-  animation-duration: 200ms;
+  animation-duration: 500ms;
   animation-timing-function: ease-in-out;
 }
 
 ::view-transition-new(.slide-in) {
   animation-name: slideInRight;
-  animation-duration: 400ms;
+  animation-duration: 500ms;
   animation-timing-function: ease-in-out;
 }
 
 ::view-transition-old(.slide-out) {
   animation-name: slideOutLeft;
-  animation-duration: 400ms;
+  animation-duration: 500ms;
   animation-timing-function: ease-in-out;
 }
 
 ::view-transition-new(.slide-out) {
   animation-name: slideInLeft;
-  animation-duration: 400ms;
+  animation-duration: 500ms;
   animation-timing-function: ease-in-out;
 }
 
@@ -92,7 +50,7 @@ select {
     opacity: 1;
   }
   to {
-    transform: translateX(50%);
+    transform: translateX(100%);
     opacity: 0;
   }
 }

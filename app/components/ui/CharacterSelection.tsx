@@ -1,18 +1,16 @@
-"use client";
-
 import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
-import characters from "../utilities/characters";
+import characters from "../../utilities/characters";
 import {
   Character,
   SelectedCharacter,
   elementColors,
   loadSelectedCharacters,
   saveSelectedCharacters,
-} from "../utilities/selection-storage";
-import CharacterCard from "../components/CharacterCard";
+} from "../../utilities/selection-storage";
+import CharacterCard from "../../components/CharacterCard";
 
-export default function Home() {
+export default function CharacterSelection() {
   const [userCharacters, setUserCharacters] = useState<SelectedCharacter[]>([]);
   const selectedNames = useMemo(() => new Set(userCharacters.map((character) => character.name)), [userCharacters]);
 
@@ -95,9 +93,8 @@ export default function Home() {
                     type="button"
                     onClick={() => toggleCharacter(character)}
                     suppressHydrationWarning
-                    className={`group flex flex-col overflow-hidden rounded-2xl p-2 text-left transition duration-200 hover:-translate-y-0.5 max-w-[150px] cursor-pointer`}
-                    
-                  >
+                    className={`group flex flex-col overflow-hidden rounded-2xl p-2 text-left transition duration-200 hover:-translate-y-0.8 max-w-[150px] cursor-pointer`}
+                    >
                     <CharacterCard characterName={character.name} isSelected={isSelected} />
                   </button>
                 );
@@ -109,4 +106,3 @@ export default function Home() {
     </main>
   );
 }
-

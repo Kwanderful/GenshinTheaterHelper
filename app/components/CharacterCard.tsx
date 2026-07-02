@@ -15,7 +15,7 @@ export default function CharacterCard ({ characterName, isSelected }: CharacterC
       <div
         className={`relative mb-2 h-24 overflow-hidden rounded-2xl ${isSelected ? "grayscale-0" : "grayscale"}`}
         style={{
-          backgroundColor: characterData?.rarity === 5 ? "#dbc84d" : "#a74ddb",
+          backgroundColor: characterData?.rarity === 5 ? "#C89226" : "#977FD3",
         }}
       >
         <Image

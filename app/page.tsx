@@ -6,7 +6,6 @@ import { SelectedCharacter, loadSelectedCharacters } from "./utilities/selection
 import theaters from "./utilities/theaters";
 import CharacterGrid from "./components/CharacterGrid";
 import ResultsDisplay from "./components/ResultsDisplay";
-import CharacterSelection from "./components/ui/CharacterSelection";
 
 export default function Home() {
   const [selectedCharacters, setSelectedCharacters] = useState<SelectedCharacter[]>([]);
@@ -80,7 +79,6 @@ export default function Home() {
       <CharacterGrid title="Opening Cast" characterNames={currentTheater.opening_cast} />
       <CharacterGrid title="Special Invites" characterNames={currentTheater.special_invites} />
 
-      <CharacterSelection characters={selectedCharacters}/>
     </div>
   );
 }

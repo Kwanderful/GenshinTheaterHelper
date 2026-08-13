@@ -27,11 +27,7 @@ export default function CharacterCard ({ characterName, isSelected }: CharacterC
         <Image src={`/imgs/element/${characterData?.element}.png`} alt={characterData?.element || "Element"} width={30} height={30} className="absolute top-1 left-1 opacity-100" />
       </div>
 
-      <div className="flex items-center justify-between gap-3">
-        <div>
-          <p>{characterData?.name}</p>
-        </div>
-      </div>
+      <p className="text-sm ml-2">{characterData?.name}</p>
     </div>
   )
 };

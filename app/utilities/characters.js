@@ -25,6 +25,12 @@ const characters = [
         icon: "Aloy.png"
     },
     {
+        name: "Alyosha",
+        rarity: 4,
+        element: "Electro",
+        icon: "Alyosha.png"
+    },
+    {
         name: "Amber",
         rarity: 4,
         element: "Pyro",

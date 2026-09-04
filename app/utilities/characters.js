@@ -619,6 +619,18 @@ const characters = [
         icon: "Venti.png"
     },
     {
+        name: "Vesna",
+        rarity: 5,
+        element: "Anemo",
+        icon: "Vesna.png"
+    },
+    {
+        name: "Vodyanitsa",
+        rarity: 5,
+        element: "Hydro",
+        icon: "Vodyanitsa.png"
+    },
+    {
         name: "Wanderer",
         rarity: 5,
         element: "Anemo",

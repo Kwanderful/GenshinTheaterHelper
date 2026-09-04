@@ -27,7 +27,7 @@ const theaters = [
         month: "November",
         elements: ["Hydro", "Electro", "Geo"],
         opening_cast: ["Yelan", "Aino", "Flins", "Fischl", "Zhongli", "Kachina"],
-        special_invites: ["Qiqi", "Diona", "Nefer", "Jahoda"],
+        special_invites: ["Qiqi", "Odette", "Vesna", "Jahoda"],
     }
 ]
 export default theaters;

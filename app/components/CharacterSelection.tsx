@@ -112,7 +112,7 @@ export default function CharacterSelection ({ savedCharacters, setSavedCharacter
 
             {/* Element Selection */}
             <Paper elevation={3} style={{backgroundColor: "#452e70", color: "#fff"}}>
-            <section className="flex justify-center gap-4 mb-5 py-4">
+            <section className="flex flex-wrap justify-center gap-4 mb-5 py-4">
                 {ElementSelection}
                 <button className="cursor-pointer font-semibold" onClick={() => setCharactersToShow(currentTheaterCharacters())}>Current Theater</button>
                 <button className="cursor-pointer font-semibold" onClick={() => resetElement()}>Reset</button>

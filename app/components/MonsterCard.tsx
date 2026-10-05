@@ -9,7 +9,7 @@ export default function MonsterCard ({monster}: MonsterCardProps) {
     const monsterCard = monsters.find((mon) => mon.name === monster);
 
     return (
-        <div className="" style={{ width: 100, height: 120 }}>
+        <div className="" style={{ width: 100 }}>
           <div
             className={`relative h-24 overflow-hidden bg-zinc-200`}
           >
@@ -21,7 +21,7 @@ export default function MonsterCard ({monster}: MonsterCardProps) {
             />
     
           </div>
-          <div className="bg-zinc-100 text-slate-950 text-center" style={{ height: 55 }}>
+          <div className="bg-zinc-100 text-slate-950 text-center m" style={{ height: 55 }}>
             <p className="text-xs pt-1 pb-10">{monsterCard!.name}</p>
           </div>
         </div>

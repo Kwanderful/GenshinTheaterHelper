@@ -1,84 +1,37 @@
 "use client";
 
-import Image from "next/image";
-import { useMemo, useState, useEffect } from "react";
-import { SelectedCharacter, loadSelectedCharacters } from "./utilities/selection-storage";
+import { useState } from "react";
+import CharacterSelection from "./components/CharacterSelection";
+import TheaterInfo from "./components/TheaterInfo";
+import useLocalStorage from "./hooks/useLocalStorage";
 import theaters from "./utilities/theaters";
-import CharacterGrid from "./components/CharacterGrid";
-import ResultsDisplay from "./components/ResultsDisplay";
 
 export default function Home() {
-  const [selectedCharacters, setSelectedCharacters] = useState<SelectedCharacter[]>([]);
-  const theaterMonths = theaters.map((theater) => theater.month);
+  const [savedCharacters, setSavedCharacters, loadedState] = useLocalStorage();
   const [currentTheater, setCurrentTheater] = useState(theaters[0] || null);
-  const [includeTraveler, setIncludeTraveler] = useState(true);
 
-  useEffect(() => {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setSelectedCharacters(loadSelectedCharacters());
-      }, []);
-
-  const { numUsableCharacters } = useMemo(() => {
-    if (!currentTheater) {
-      return { numUsableCharacters: 0 };
-    }
-
-    const openingCastMatches = currentTheater.opening_cast.filter((character) =>
-      selectedCharacters.some((selected) => selected.name !== character),
-    ).length;
-
-    const specialInviteMatches = currentTheater.special_invites.filter((character) =>
-      selectedCharacters.some((selected) => selected.name === character),
-    ).length;
-
-    const elementMatches = selectedCharacters.filter(
-      (selected) =>
-        currentTheater.elements.includes(selected.element) &&
-        !currentTheater.opening_cast.includes(selected.name) &&
-        !currentTheater.special_invites.includes(selected.name),
-    ).length;
-
-    const count = openingCastMatches + specialInviteMatches + elementMatches + (selectedCharacters.length === 0 ? 6 : 0);
-
-    return { numUsableCharacters: count };
-  }, [currentTheater, selectedCharacters]);
-
+  function changeTheater (month: string) {
+    setCurrentTheater(theaters.find((theater) => theater.month === month) || theaters[0]);
+  }
 
   return (
-    <div>
-      {/* Month selection */}
-      <div className="flex justify-center gap-10 mt-8">
-        {theaterMonths.map((month) => (
-        <button
-          key={month}
-          onClick={() => setCurrentTheater(theaters.find((theater) => theater.month === month) || theaters[0])}
-          style={{ color: currentTheater?.month === month ? "white" : "gray", textDecoration: currentTheater?.month === month ? "underline" : "none" }}
-          className="text-lg cursor-pointer hover:text-white"
-        >
-          {month}
-        </button>
-      ))}
+    <div className="flex flex-col lg:flex-row justify-center text-slate-100 bg font-sans dark:bg-black">
+      <div className="flex flex-1 lg:max-h-screen lg:overflow-y-auto justify-center">
+        <TheaterInfo 
+        savedCharacters={savedCharacters} 
+        currentTheater={currentTheater} 
+        updateTheater={changeTheater} 
+        />
       </div>
-
-      {/* Display usable characters and characters needed for next difficulty */}
-      <ResultsDisplay numUsableCharacters={numUsableCharacters + (includeTraveler ? 1 : 0)} />
-
-      <div className="flex justify-center gap-2 mt-5">
-        <p className="text-lg">Include traveler?</p>
-        <input type="checkbox" id="include-traveler" checked={includeTraveler} onChange={() => setIncludeTraveler(!includeTraveler)} />
+  
+      <div className="flex w-full flex-1 flex-col mt-30 lg:mt-0 lg:max-h-screen lg:overflow-y-auto items-center dark:bg-black sm:items-start">
+        <CharacterSelection 
+          savedCharacters={savedCharacters} 
+          setSavedCharacters={setSavedCharacters}
+          loadedState={loadedState} 
+          currentTheater={currentTheater}
+          />
       </div>
-
-      {/* Theater display */}
-      <div className="flex justify-center gap-2 mt-8">
-        {currentTheater.elements.map((element) => (
-          <Image key={element} src={`/imgs/element/${element}.png`} alt={element} width={40} height={40}  />
-        ))}
-      </div>
-
-      {/* Characters in current theater */}
-      <CharacterGrid title="Opening Cast" characterNames={currentTheater.opening_cast} />
-      <CharacterGrid title="Special Invites" characterNames={currentTheater.special_invites} />
-
     </div>
   );
 }

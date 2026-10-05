@@ -4,6 +4,4 @@ Select your characters on the Characters page and enjoy being able to immediatel
 
 
 ## To-do:
--Add the boss enemy lineup
-
 -Add enemy information upon clicking an act

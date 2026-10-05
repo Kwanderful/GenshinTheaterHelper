@@ -21,7 +21,7 @@ export default function ResultsDisplay({ numUsableCharacters }: ResultsDisplayPr
 
 
     return (
-        <div className="mt-5 text-center mt-10">
+        <div className="text-center mt-4">
             <p className="text-xl font-semibold">Usable characters: {numUsableCharacters} ({diff})</p>
 
             {diff !== "Lunar" && diff !== "Visionary" && <p className="text-md">{22 - numUsableCharacters} more for Visionary</p>}

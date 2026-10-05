@@ -15,7 +15,7 @@ export default function BossInfo ({currentTheater}: BossInfoProps) {
     )
 
     return (
-        <div className="flex flex-col justify-center gap-2 mt-8 pb-12">
+        <div className="flex flex-col justify-center gap-2 mt-4 pb-12">
             <p className="text-lg font-bold text-center">Bosses</p>
             <div className="flex flex-row flex-wrap gap-4 justify-center items-stretch">
                 <div className="flex flex-col">
@@ -32,11 +32,11 @@ export default function BossInfo ({currentTheater}: BossInfoProps) {
                 </div>
             </div>
 
-            <p className="text-center mt-14">Arcana Challenge 1</p>
+            <p className="text-center mt-4">Arcana Challenge 1</p>
             <div className="flex flex-row flex-wrap gap-4 justify-center">
                 {arcanaChallenge1}
             </div>
-            <p className="text-center mt-12">Arcana Challenge 2</p>
+            <p className="text-center mt-4">Arcana Challenge 2</p>
             <div className="flex flex-row flex-wrap gap-4 justify-center">
                 {arcanaChallenge2}
             </div>

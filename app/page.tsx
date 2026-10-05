@@ -15,8 +15,8 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center text-slate-100 bg font-sans dark:bg-black">
-      <div className="flex flex-1 lg:max-h-screen lg:overflow-y-auto justify-center">
+    <div className="flex flex-col justify-center text-slate-100 bg font-sans">
+      <div className="flex justify-center">
         <TheaterInfo 
         savedCharacters={savedCharacters} 
         currentTheater={currentTheater} 
@@ -24,7 +24,7 @@ export default function Home() {
         />
       </div>
   
-      <div className="flex w-full flex-1 flex-col mt-30 lg:mt-0 lg:max-h-screen lg:overflow-y-auto items-center dark:bg-black sm:items-start">
+      <div className="flex justify-center mt-10">
         <CharacterSelection 
           savedCharacters={savedCharacters} 
           setSavedCharacters={setSavedCharacters}

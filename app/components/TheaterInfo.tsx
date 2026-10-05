@@ -31,9 +31,9 @@ export default function TheaterInfo({savedCharacters, currentTheater, updateThea
     }
 
     return (
-    <div className="px-4">
+    <div className="flex flex-col gap-4 justify-center px-4 w-250">
         <Paper elevation={3} style={{backgroundColor: "#3c1f72", color: "#fff"}}>
-            <p className="mt-5 pt-6 text-3xl font-semibold text-white text-center">Genshin Theater Helper</p>
+            <p className="mt-2 pt-2 text-3xl font-semibold text-white text-center">Genshin Theater Helper</p>
             <p className="text-center text-xs pb-4">a tool made by Sawri</p>
         </Paper>
 
@@ -50,7 +50,7 @@ export default function TheaterInfo({savedCharacters, currentTheater, updateThea
         {/* Theater display */}
         
         <Paper elevation={3} style={{backgroundColor: "#3c1f72", color: "#fff"}}>
-            <section className="py-3 mt-8">
+            <section className="py-3">
                 {/* Month selection */}
                 <div className="flex justify-center gap-10">
                     {theaterMonths.map((month) => (
@@ -63,7 +63,7 @@ export default function TheaterInfo({savedCharacters, currentTheater, updateThea
                     </button>
                     ))}
                 </div>
-                <div className="flex justify-center gap-2 mt-8">
+                <div className="flex justify-center gap-2 mt-4">
                     {currentTheater.elements.map((element) => (
                         <Image key={element} src={`/imgs/element/${element}.png`} alt={element} width={40} height={40} />
                     ))}
@@ -74,9 +74,9 @@ export default function TheaterInfo({savedCharacters, currentTheater, updateThea
         
         {/* Characters in current theater */}
         <Paper elevation={3} style={{backgroundColor: "#452e70", color: "#fff"}}>
-            <p className="text-lg font-bold text-center mt-8 pt-3">Opening Cast</p>
+            <p className="text-lg font-bold text-center mt-4 pt-3">Opening Cast</p>
             <CharacterGrid characterNames={currentTheater.opening_cast} />
-            <p className="text-lg font-bold text-center mt-10">Special Invites</p>
+            <p className="text-lg font-bold text-center mt-4">Special Invites</p>
             <CharacterGrid characterNames={currentTheater.special_invites} />
 
             {currentTheater.act_3_boss && <BossInfo currentTheater={currentTheater} />}

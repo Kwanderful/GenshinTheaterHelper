@@ -35,7 +35,6 @@ export default function TheaterInfo({savedCharacters, currentTheater, updateThea
         <Paper elevation={3} style={{backgroundColor: "#3c1f72", color: "#fff"}}>
             <p className="mt-5 pt-6 text-3xl font-semibold text-white text-center">Genshin Theater Helper</p>
             <p className="text-center text-xs pb-4">a tool made by Sawri</p>
-            
         </Paper>
 
         <Paper elevation={3} style={{backgroundColor: "#452e70", color: "#fff"}}>
@@ -58,7 +57,7 @@ export default function TheaterInfo({savedCharacters, currentTheater, updateThea
                     <button
                     key={month}
                     onClick={() => updateTheater(month)}
-                    style={{ color: currentTheater?.month === month ? "white" : "gray", textDecoration: currentTheater?.month === month ? "underline" : "none" }}
+                    style={{ color: currentTheater?.month === month ? "white" : "lavender", textDecoration: currentTheater?.month === month ? "underline" : "none" }}
                     className="text-lg cursor-pointer hover:text-slate-200">
                     {month}
                     </button>

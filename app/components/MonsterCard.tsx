@@ -15,7 +15,7 @@ export default function MonsterCard ({monster}: MonsterCardProps) {
           >
             <Image
               src={`/imgs/monster/${monsterCard!.icon}`}
-              alt="PMA"
+              alt={monsterCard!.name}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, (max-width: 1536px) 14.28vw, (max-width: 1920px) 12.5vw, 150px"
             />

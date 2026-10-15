@@ -5,7 +5,7 @@ const monsters = [
     },
     {
         name: "Battle-Hardened Chimeric Volkodlak Archer",
-        icon: "Voywolf.png"
+        icon: "Voywolf_LL.png"
     },
     {
         name: "Chimeric Winged Lion",

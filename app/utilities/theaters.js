@@ -15,7 +15,7 @@ const theaters = [
         month: "December",
         elements: ["Pyro", "Hydro", "Geo"],
         opening_cast: ["Arlecchino", "Bennett", "Furina", "Xingqiu", "Navia", "Illuga"],
-        special_invites: ["Jean", "Yae Miko", "Emilie", "Iansan"],
+        special_invites: ["Chasca", "Varesa", "Kinich", "Iansan"],
         act_3_boss: "Experimental Field Generator",
         act_6_boss: "Arithmetic Enhancer Mek",
         act_8_boss: "Radiant Moongecko",

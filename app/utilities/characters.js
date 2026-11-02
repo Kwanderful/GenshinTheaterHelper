@@ -421,6 +421,12 @@ const characters = [
         icon: "Miko.png"
     },
     {
+        name: "Mitya",
+        rarity: 5,
+        element: "Electro",
+        icon: "Mitya.png"
+    },
+    {
         name: "Yumemizuki Mizuki",
         rarity: 5,
         element: "Anemo",
@@ -599,6 +605,12 @@ const characters = [
         rarity: 5,
         element: "Dendro",
         icon: "Tighnari.png"
+    },
+    {
+        name: "Valeriy",
+        rarity: 4,
+        element: "Electro",
+        icon: "Valeriy.png"
     },
     {
         name: "Varesa",
